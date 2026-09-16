@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>360 Real Estate World</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+body {
+    background: #fbfaf9;
+    font-family: 'Lato', sans-serif;
+    padding: 60px 0;
+    overflow-x: hidden;
+}
+.realestate-world-section {
+    position: relative;
+    padding: 50px 0;
+    background: linear-gradient(180deg, #fbfaf9 0%, #f5f4f0 100%);
+    border-radius: 20px;
+    overflow: hidden;
+}
+.world-360-stage {
+    position: relative;
+    width: 100%;
+    max-width: 540px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#globe-360-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: grab;
+    outline: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+#globe-360-canvas:active {
+    cursor: grabbing;
+}
+/* Floating badges */
+.world-float-badge {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(254, 143, 2, 0.25);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 14px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 5;
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+.world-float-badge.badge-top-left {
+    top: 20px;
+    left: 5px;
+    animation: floatAnim1 5s ease-in-out infinite alternate;
+}
+.world-float-badge.badge-bottom-right {
+    bottom: 25px;
+    right: 5px;
+    animation: floatAnim2 6s ease-in-out infinite alternate;
+}
+.world-float-badge.badge-mid-right {
+    top: 90px;
+    right: -10px;
+    animation: floatAnim1 5.5s ease-in-out infinite alternate 1s;
+}
+.world-float-badge .badge-icon-box {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: linear-gradient(135deg, #FE8F02 0%, #FAB206 100%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 4px 12px rgba(254, 143, 2, 0.3);
+}
+.world-float-badge .badge-info small {
+    display: block;
+    font-size: 11px;
+    color: #777;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: normal;
+}
+.world-float-badge .badge-info strong {
+    font-size: 14px;
+    color: #1a1a1a;
+    font-weight: 500;
+}
+@keyframes floatAnim1 {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(-10px); }
+}
+@keyframes floatAnim2 {
+    0% { transform: translateY(0px); }
+    100% { transform: translateY(10px); }
+}
+.rotate-hint-pill {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(26, 26, 26, 0.78);
+    color: #ffffff;
+    padding: 5px 16px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: normal;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    pointer-events: none;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    transition: opacity 0.3s;
+}
+.rotate-hint-pill i {
+    color: #FAB206;
+    animation: spinHint 4s linear infinite;
+}
+@keyframes spinHint {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+@media (max-width: 768px) {
+    .world-360-stage {
+        height: 420px;
+    }
+    .world-float-badge.badge-mid-right {
+        display: none;
+    }
+    .world-float-badge.badge-top-left {
+        left: 0;
+        top: 10px;
+    }
+    .world-float-badge.badge-bottom-right {
+        right: 0;
+        bottom: 15px;
+    }
+}
+.headline--realestate {
+    white-space: nowrap;
+    display: inline-block;
+}
+@media (max-width: 576px) {
+    .headline--realestate {
+        white-space: normal;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="main-section industries-we-serve-full">
+    <div class="container">
+        <div class="row align-items-center">
+            <!-- Left Text Column -->
+            <div class="col-lg-6 industries-text">
+                <h5 class="expertise mb-3" style="color:#FE8F02; font-weight: 500; letter-spacing:1.5px; font-size:13px; text-transform:uppercase;">
+                    <i class="fa-solid fa-globe me-2"></i>Real Estate Reach
+                </h5>
+                <h2 class="industries-head mb-3" style="font-size: clamp(20px, 2.15vw, 30px); font-weight: 500; color:#1a1a1a; line-height:1.25; letter-spacing: -0.3px;">
+                    <span class="headline--realestate">CONNECTING real estate</span> <br><span style="color:#FE8F02;">TO THE WORLD</span>
+                </h2>
+                <p class="mb-4" style="color:#555; font-size:15px; line-height:1.75;">
+                    At <strong>Home Ads</strong>, we specialize exclusively in powering property developers, brokerages, and agencies with full 360° market exposure. Our performance-engineered lead funnels, custom web markets, and automated CRM workflows connect your off-plan and premium listings directly to high-net-worth investors across Europe, the GCC, the UK, Asia, and North America.
+                </p>
+                <div class="row g-3 mb-4">
+                    <div class="col-6">
+                        <div class="p-3" style="background:#fff; border-radius:10px; border-left:4px solid #FE8F02; box-shadow:0 4px 15px rgba(0,0,0,0.04);">
+                            <h3 style="font-size:26px; font-weight: 500; color:#1a1a1a; margin:0 0 4px;">45+</h3>
+                            <span style="font-size:13px; color:#777; font-weight: 500;">Investor Markets Reached</span>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3" style="background:#fff; border-radius:10px; border-left:4px solid #FAB206; box-shadow:0 4px 15px rgba(0,0,0,0.04);">
+                            <h3 style="font-size:26px; font-weight: 500; color:#1a1a1a; margin:0 0 4px;">360°</h3>
+                            <span style="font-size:13px; color:#777; font-weight: 500;">Digital Property Coverage</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-wrap gap-3 align-items-center">
+                    <button class="speak-to-us-btn" style="background:#FAB206; color:#000; font-weight: 500; border:none; padding:12px 30px; border-radius:4px; font-size:14px; cursor:pointer;" onclick="window.location.href='/contact-digital-experts?service=Lead%20Generation'">Contact Our Experts</button>
+                    <a href="/lead-generation-solutions.html" style="color:#1a1a1a; font-weight: 500; font-size:14px; text-decoration:none; display:flex; align-items:center; gap:6px;">
+                        Explore Lead Generation <i class="fa-solid fa-arrow-right-long" style="color:#FE8F02;"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Right Globe Column: 360 Real Estate World -->
+            <div class="col-lg-6">
+                <div class="world-360-stage" id="world-360-stage">
+                    <!-- Float Badges -->
+                    <div class="world-float-badge badge-top-left">
+                        <div class="badge-icon-box"><i class="fa-solid fa-earth-americas"></i></div>
+                        <div class="badge-info">
+                            <small>Buyers</small>
+                            <strong>360° Investor Reach</strong>
+                        </div>
+                    </div>
+
+                    <div class="world-float-badge badge-mid-right">
+                        <div class="badge-icon-box"><i class="fa-solid fa-chart-line"></i></div>
+                        <div class="badge-info">
+                            <small>Off-Plan Leads</small>
+                            <strong>High-ROI Conversion</strong>
+                        </div>
+                    </div>
+
+                    <div class="world-float-badge badge-bottom-right">
+                        <div class="badge-icon-box"><i class="fa-solid fa-city"></i></div>
+                        <div class="badge-info">
+                            <small>real estate</small>
+                            <strong>AED 250M+ In Deals</strong>
+                        </div>
+                    </div>
+
+                    <!-- 360 Interactive Hint -->
+                    <div class="rotate-hint-pill" id="rotate-pill">
+                        <i class="fa-solid fa-arrows-rotate"></i> Drag to Rotate 360°
+                    </div>
+
+                    <canvas id="globe-360-canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function() {
+    var stage = document.getElementById('world-360-stage');
+    var canvas = document.getElementById('globe-360-canvas');
+    if (!stage || !canvas) return;
+
+    var width = stage.clientWidth || 500;
+    var height = stage.clientHeight || 480;
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(40, width / height, 0.1, 1000);
+    camera.position.z = (width < 460) ? 380 : 330;
+
+    var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+    renderer.setSize(width, height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+    // Master World Group (rotates on drag and auto-spins)
+    var worldGroup = new THREE.Group();
+    scene.add(worldGroup);
+
+    // Initial slight tilt matching user's reference image
+    worldGroup.rotation.x = 0.18;
+    worldGroup.rotation.z = -0.05;
+
+    // 1. Globe Base Sphere (Glossy white/porcelain look matching Image 2)
+    var globeRadius = 65;
+    var baseGeo = new THREE.SphereGeometry(globeRadius, 64, 64);
+    var baseMat = new THREE.MeshPhongMaterial({
+        color: 0xfbfcfd,
+        emissive: 0x111111,
+        specular: 0x555555,
+        shininess: 35,
+        transparent: true,
+        opacity: 0.96
+    });
+    var baseGlobe = new THREE.Mesh(baseGeo, baseMat);
+    worldGroup.add(baseGlobe);
+
+    // Subtle golden atmosphere glow
+    var atmoGeo = new THREE.SphereGeometry(globeRadius * 1.035, 48, 48);
+    var atmoMat = new THREE.MeshBasicMaterial({
+        color: 0xFE8F02,
+        transparent: true,
+        opacity: 0.08,
+        side: THREE.BackSide
+    });
+    worldGroup.add(new THREE.Mesh(atmoGeo, atmoMat));
+
+    // 2. Continents Dot Matrix Texture
+    var textureLoader = new THREE.TextureLoader();
+    textureLoader.load('/static/img/world-dots.png', function(dotTexture) {
+        dotTexture.wrapS = THREE.RepeatWrapping;
+        dotTexture.wrapT = THREE.ClampToEdgeWrapping;
+        var dotsGeo = new THREE.SphereGeometry(globeRadius + 0.5, 64, 64);
+        var dotsMat = new THREE.MeshBasicMaterial({
+            map: dotTexture,
+            transparent: true,
+            opacity: 0.94,
+            depthWrite: false
+        });
+        var dotsMesh = new THREE.Mesh(dotsGeo, dotsMat);
+        // Align texture with standard lat/long
+        dotsMesh.rotation.y = -Math.PI * 0.5;
+        baseGlobe.add(dotsMesh);
+    });
+
+    // 3. Real Estate Hotspot Pins (, London, New York, Singapore, Riyadh)
+    function latLongToVector3(lat, lon, radius) {
+        var phi = (90 - lat) * (Math.PI / 180);
+        var theta = (lon + 180) * (Math.PI / 180);
+        var x = -(radius * Math.sin(phi) * Math.cos(theta));
+        var z = radius * Math.sin(phi) * Math.sin(theta);
+        var y = radius * Math.cos(phi);
+        return new THREE.Vector3(x, y, z);
+    }
+
+    var hotspots = [
+        { name: '(HQ)', lat: 25.2, lon: 55.3, color: 0xFE8F02, size: 3.2 },
+        { name: 'London', lat: 51.5, lon: -0.1, color: 0xFAB206, size: 2.5 },
+        { name: 'New York', lat: 40.7, lon: -74.0, color: 0xFAB206, size: 2.5 },
+        { name: 'Riyadh', lat: 24.7, lon: 46.7, color: 0xFE8F02, size: 2.6 },
+        { name: 'Singapore', lat: 1.35, lon: 103.8, color: 0xFAB206, size: 2.4 }
+    ];
+
+    var pinBeacons = [];
+    hotspots.forEach(function(h) {
+        var pos = latLongToVector3(h.lat, h.lon, globeRadius + 1.2);
+        
+        // Solid core pin
+        var pinGeo = new THREE.SphereGeometry(h.size, 16, 16);
+        var pinMat = new THREE.MeshBasicMaterial({ color: h.color });
+        var pinMesh = new THREE.Mesh(pinGeo, pinMat);
+        pinMesh.position.copy(pos);
+        baseGlobe.add(pinMesh);
+
+        // Pulsing ring
+        var ringGeo = new THREE.RingGeometry(h.size * 1.2, h.size * 2.2, 24);
+        var ringMat = new THREE.MeshBasicMaterial({
+            color: h.color,
+            transparent: true,
+            opacity: 0.7,
+            side: THREE.DoubleSide
+        });
+        var ringMesh = new THREE.Mesh(ringGeo, ringMat);
+        ringMesh.position.copy(pos);
+        ringMesh.lookAt(new THREE.Vector3(0, 0, 0));
+        baseGlobe.add(ringMesh);
+
+        pinBeacons.push({ ring: ringMesh, baseScale: 1, maxScale: 2.2, phase: Math.random() * Math.PI });
+    });
+
+    // 4. Golden 3D Orbit Rings (Tilted Ellipses matching reference Image 2)
+    var orbitGroup = new THREE.Group();
+    scene.add(orbitGroup);
+
+    function createGoldOrbit(radX, radY, rotX, rotY, rotZ, tubeR) {
+        var curve = new THREE.EllipseCurve(0, 0, radX, radY, 0, 2 * Math.PI, false, 0);
+        var pts = curve.getPoints(128);
+        var pts3D = pts.map(function(p) { return new THREE.Vector3(p.x, p.y, 0); });
+        var catmull = new THREE.CatmullRomCurve3(pts3D, true);
+
+        var tubeGeo = new THREE.TubeGeometry(catmull, 128, tubeR || 1.2, 8, true);
+        var tubeMat = new THREE.MeshStandardMaterial({
+            color: 0xFE8F02,
+            roughness: 0.22,
+            metalness: 0.88,
+            emissive: 0x885000,
+            emissiveIntensity: 0.18
+        });
+        var mesh = new THREE.Mesh(tubeGeo, tubeMat);
+        mesh.rotation.set(rotX, rotY, rotZ);
+
+        return { mesh: mesh, curve: catmull, rotX: rotX, rotY: rotY, rotZ: rotZ };
+    }
+
+    // 3 Golden Rings positioned to match the angles in the user's uploaded image
+    var ring1 = createGoldOrbit(96, 90, Math.PI * 0.44, Math.PI * 0.08, -Math.PI * 0.06, 1.4);
+    orbitGroup.add(ring1.mesh);
+
+    var ring2 = createGoldOrbit(102, 95, Math.PI * 0.28, -Math.PI * 0.14, Math.PI * 0.38, 1.2);
+    orbitGroup.add(ring2.mesh);
+
+    var ring3 = createGoldOrbit(100, 93, Math.PI * 0.36, Math.PI * 0.22, -Math.PI * 0.42, 1.2);
+    orbitGroup.add(ring3.mesh);
+
+    // Glowing satellites/nodes travelling along the golden orbits
+    var satellites = [];
+    [ring1, ring2, ring3].forEach(function(rObj, idx) {
+        var satGeo = new THREE.SphereGeometry(3.0, 16, 16);
+        var satMat = new THREE.MeshBasicMaterial({ color: 0xffe066 });
+        var sat = new THREE.Mesh(satGeo, satMat);
+        rObj.mesh.add(sat);
+        satellites.push({ mesh: sat, curve: rObj.curve, t: idx * 0.33, speed: 0.0012 + idx * 0.0004 });
+    });
+
+    // 5. Lighting Setup
+    var amb = new THREE.AmbientLight(0xffffff, 0.9);
+    scene.add(amb);
+
+    var lightFront = new THREE.DirectionalLight(0xffffff, 0.95);
+    lightFront.position.set(160, 120, 200);
+    scene.add(lightFront);
+
+    var lightGold = new THREE.DirectionalLight(0xFE8F02, 0.7);
+    lightGold.position.set(-160, -60, -100);
+    scene.add(lightGold);
+
+    // 6. Interactive 360-Degree Drag and Continuous Rotation
+    var isDragging = false;
+    var prevMouse = { x: 0, y: 0 };
+    var autoSpeed = 0.0015;
+    var hintPill = document.getElementById('rotate-pill');
+
+    function onDown(x, y) {
+        isDragging = true;
+        prevMouse.x = x;
+        prevMouse.y = y;
+        if (hintPill) hintPill.style.opacity = '0.3';
+    }
+    function onMove(x, y) {
+        if (!isDragging) return;
+        var dx = x - prevMouse.x;
+        var dy = y - prevMouse.y;
+
+        // 360-degree rotation on Y axis
+        worldGroup.rotation.y += dx * 0.008;
+        // Tilt adjustment on X axis (constrained for natural globe feel)
+        worldGroup.rotation.x = Math.max(-0.5, Math.min(0.5, worldGroup.rotation.x + dy * 0.005));
+
+        prevMouse.x = x;
+        prevMouse.y = y;
+    }
+    function onUp() {
+        isDragging = false;
+        if (hintPill) hintPill.style.opacity = '0.85';
+    }
+
+    // Mouse Events
+    canvas.addEventListener('mousedown', function(e) { onDown(e.clientX, e.clientY); });
+    window.addEventListener('mousemove', function(e) { onMove(e.clientX, e.clientY); });
+    window.addEventListener('mouseup', onUp);
+
+    // Touch Events
+    canvas.addEventListener('touchstart', function(e) {
+        if (e.touches.length === 1) onDown(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+    window.addEventListener('touchmove', function(e) {
+        if (e.touches.length === 1) onMove(e.touches[0].clientX, e.touches[0].clientY);
+    }, { passive: true });
+    window.addEventListener('touchend', onUp);
+
+    // Responsive Canvas Resizing
+    function resize() {
+        var w = stage.clientWidth;
+        var h = stage.clientHeight || 480;
+        if (w && h) {
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+        }
+    }
+    window.addEventListener('resize', resize);
+
+    // Animation Loop (60 FPS)
+    var clock = new THREE.Clock();
+    function render() {
+        requestAnimationFrame(render);
+        var elapsed = clock.getElapsedTime();
+
+        // 360 continuous smooth auto-rotation
+        if (!isDragging) {
+            worldGroup.rotation.y += autoSpeed;
+        }
+
+        // Orbit rings slight precession
+        ring1.mesh.rotation.z += 0.0003;
+        ring2.mesh.rotation.z -= 0.00035;
+        ring3.mesh.rotation.y += 0.0004;
+
+        // Move satellites along orbits
+        satellites.forEach(function(s) {
+            s.t = (s.t + s.speed) % 1;
+            var pt = s.curve.getPoint(s.t);
+            s.mesh.position.set(pt.x, pt.y, 0);
+        });
+
+        // Beacon pulses on & international real estate hubs
+        pinBeacons.forEach(function(b, i) {
+            var sc = 1 + 0.45 * Math.sin(elapsed * 2 + b.phase);
+            b.ring.scale.set(sc, sc, sc);
+            b.ring.material.opacity = Math.max(0.1, 0.7 - (sc - 1) * 0.8);
+        });
+
+        renderer.render(scene, camera);
+    }
+    render();
+})();
+</script>
+
+  <script src="navbar.js" defer></script>
+<script src="security.js"></script>
+</body>
+</html>
+
+
+

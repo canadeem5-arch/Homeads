@@ -1,0 +1,1273 @@
+import os
+
+html_code = """<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <!-- ===== PRIMARY SEO TAGS ===== -->
+  <title>Contact HomeAds | Real Estate Digital Experts Dubai | homeads.ae</title>
+  <meta name="description" content="Get in touch with HomeAds (homeads.ae) in Dubai, UAE. Connect with our digital experts for Web Designing, Web Development, Lead Generation, and CRM Solutions. Call 1234567890." />
+  <meta name="keywords" content="contact homeads, homeads dubai, real estate marketing agency dubai, property digital marketing contact, homeads.ae contact, hire real estate web designers dubai" />
+  <meta name="author" content="HomeAds" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://homeads.ae/contact.html" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Geographic & Language Tags -->
+  <meta name="geo.region" content="AE-DU" />
+  <meta name="geo.placename" content="Dubai, United Arab Emirates" />
+  <meta name="language" content="English" />
+  <meta name="theme-color" content="#000000" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://homeads.ae/contact.html" />
+  <meta property="og:site_name" content="HomeAds" />
+  <meta property="og:locale" content="en_AE" />
+  <meta property="og:title" content="Contact HomeAds | Real Estate Digital Experts Dubai" />
+  <meta property="og:description" content="Connect directly with our Dubai real estate digital strategists. Phone: 1234567890. Email: info@homeads.ae." />
+  <meta property="og:image" content="https://homeads.ae/assets/landing-bg.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact HomeAds | Real Estate Digital Solutions" />
+  <meta name="twitter:description" content="Reach our Dubai real estate digital experts directly via call or WhatsApp at 1234567890." />
+  <meta name="twitter:image" content="https://homeads.ae/assets/landing-bg.png" />
+
+  <!-- Schema.org ContactPage & BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://homeads.ae/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Contact Us",
+            "item": "https://homeads.ae/contact.html"
+          }
+        ]
+      },
+      {
+        "@type": "ContactPage",
+        "name": "Contact HomeAds",
+        "url": "https://homeads.ae/contact.html",
+        "description": "Contact HomeAds for UAE real estate digital campaigns, custom property portals, lead generation, and CRM automations.",
+        "mainEntity": {
+          "@type": "ProfessionalService",
+          "name": "HomeAds",
+          "legalName": "Homes Ads Real Estate Digital Solutions",
+          "telephone": ["+9711234567890", "1234567890"],
+          "email": ["info@homeads.ae", "contact@homeads.ae"],
+          "url": "https://homeads.ae/",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Office No 19 31st Floor API World Tower Near World Trade Center Metro Station",
+            "addressLocality": "Dubai",
+            "addressRegion": "Dubai",
+            "addressCountry": "AE"
+          }
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Fonts: Brockmann (Local OTF) + Inter fallback -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== RESET & ROOT VARIABLES ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:           #000000;
+      --card-bg:      rgba(13, 16, 21, 0.82);
+      --border:       rgba(255, 255, 255, 0.09);
+      --border-hover: rgba(0, 255, 16, 0.35);
+      --fg:           #ffffff;
+      --fg2:          #a1a1aa;
+      --fg3:          #71717a;
+      --accent-green: #00ff10;
+      --accent-hover: #00e00e;
+      --radius:       18px;
+      --radius-sm:    10px;
+      --trans:        all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html { scroll-behavior: auto !important; font-size: 16px; }
+    body {
+      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #000000;
+      background-image: url('assets/landing-bg.png?v=4');
+      background-repeat: no-repeat;
+      background-position: center top;
+      background-size: cover;
+      background-attachment: fixed;
+      color: var(--fg);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+    button, input, select, textarea { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+    .container-sm { max-width: 860px; margin: 0 auto; padding: 0 24px; box-sizing: border-box; }
+
+    .grad-text {
+      color: #00ff10 !important;
+      background: none !important;
+      -webkit-background-clip: unset !important;
+      -webkit-text-fill-color: #00ff10 !important;
+      background-clip: unset !important;
+    }
+
+    /* ===== NAVBAR ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      padding: 0 24px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .nav-logo {
+      font-size: 1.35rem;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .logo-green { color: #00ff10; }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links > li > a {
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.82);
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: color 0.2s, background 0.2s;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      white-space: nowrap;
+    }
+
+    .nav-links > li > a:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.07);
+    }
+
+    .nav-links > li > a.active {
+      color: #00ff10;
+    }
+
+    .nav-pill-btn {
+      background: #00ff10 !important;
+      color: #000000 !important;
+      font-weight: 700 !important;
+      border-radius: 999px !important;
+      padding: 9px 22px !important;
+      font-size: 0.88rem !important;
+      letter-spacing: 0.04em !important;
+      text-decoration: none !important;
+      transition: background 0.2s, transform 0.15s, box-shadow 0.2s !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      white-space: nowrap !important;
+      flex-shrink: 0 !important;
+    }
+
+    .nav-pill-btn:hover {
+      background: #00e00e !important;
+      transform: translateY(-1px);
+      box-shadow: 0 0 20px rgba(0, 255, 16, 0.45) !important;
+    }
+
+    /* ===== DROPDOWN ===== */
+    .nav-item.has-dropdown { position: relative; }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #16181d;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 14px;
+      min-width: 230px;
+      padding: 8px 6px;
+      list-style: none;
+      margin: 0;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 255, 16, 0.05);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      z-index: 1000;
+    }
+    .nav-item.has-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%);
+    }
+    .dropdown-menu li { list-style: none; margin: 0; padding: 0; }
+    .dropdown-menu li a {
+      display: flex !important;
+      align-items: center !important;
+      gap: 12px !important;
+      padding: 11px 16px !important;
+      font-size: 0.92rem !important;
+      color: #ffffff !important;
+      font-weight: 500 !important;
+      text-decoration: none !important;
+      border-radius: 8px !important;
+      transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease !important;
+      white-space: nowrap !important;
+    }
+    .dropdown-menu li a svg {
+      width: 17px;
+      height: 17px;
+      color: #00ff10 !important;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+    .dropdown-menu li a:hover {
+      background: rgba(0, 255, 16, 0.14) !important;
+      color: #00ff10 !important;
+      transform: translateX(3px);
+    }
+    .dropdown-menu li a:hover svg {
+      transform: scale(1.15);
+    }
+    .dropdown-chevron { transition: transform 0.25s; }
+    .nav-item.has-dropdown:hover .dropdown-chevron { transform: rotate(180deg); }
+
+    /* ===== HAMBURGER & RESPONSIVE NAV ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 38px;
+      height: 38px;
+      padding: 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+    .hamburger span {
+      display: block;
+      width: 20px;
+      height: 2px;
+      background: #ffffff;
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    @media (max-width: 1160px) and (min-width: 921px) {
+      .nav-inner { padding: 0 16px !important; }
+      .nav-links { gap: 3px !important; }
+      .nav-links > li > a { font-size: 0.82rem !important; padding: 6px 10px !important; }
+      .nav-pill-btn { padding: 8px 16px !important; font-size: 0.82rem !important; }
+    }
+
+    @media (max-width: 920px) {
+      .hamburger { display: flex !important; position: relative; z-index: 10002 !important; }
+      .nav-links {
+        display: none !important;
+        position: fixed !important;
+        inset: 0 !important;
+        top: 64px !important;
+        background: rgba(0, 0, 0, 0.98) !important;
+        backdrop-filter: blur(20px) !important;
+        -webkit-backdrop-filter: blur(20px) !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: flex-start !important;
+        padding: 30px 20px 48px !important;
+        gap: 10px !important;
+        z-index: 10001 !important;
+        overflow-y: auto !important;
+        box-sizing: border-box !important;
+      }
+      .nav-links.open { display: flex !important; }
+      .nav-links > li { width: 100% !important; max-width: 320px !important; text-align: center !important; }
+      .nav-links > li > a { font-size: 1.05rem !important; font-weight: 600 !important; padding: 12px 20px !important; display: block !important; width: 100% !important; }
+      .nav-links .nav-pill-btn { display: inline-flex !important; justify-content: center !important; width: 100% !important; max-width: 280px !important; margin: 12px auto 0 !important; }
+      .dropdown-menu {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        box-shadow: none !important;
+        display: none !important;
+        width: 90% !important;
+        margin: 4px auto !important;
+      }
+      .dropdown-menu li a { color: #ffffff !important; }
+      .dropdown-menu li a:hover { background: rgba(255, 255, 255, 0.1) !important; }
+      .nav-item.has-dropdown.mobile-open .dropdown-menu { display: flex !important; flex-direction: column !important; }
+      .nav-item.has-dropdown.mobile-open .dropdown-chevron { transform: rotate(180deg); }
+    }
+
+    /* ===== HERO SECTION ===== */
+    .page-hero {
+      padding: 145px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 35%, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.94) 75%, #000000 100%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero-glow {
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 950px;
+      height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse, rgba(0, 255, 16, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 2;
+    }
+    .page-hero .container-sm {
+      position: relative;
+      z-index: 3;
+    }
+    .page-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(0, 255, 16, 0.3);
+      background: rgba(0, 255, 16, 0.06);
+      color: var(--accent-green);
+      padding: 8px 20px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      margin-bottom: 22px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 16px rgba(0, 255, 16, 0.1);
+    }
+    .page-title {
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.18;
+      letter-spacing: -0.035em;
+      margin-bottom: 20px;
+      color: #ffffff;
+      text-shadow: 0 4px 30px rgba(0, 0, 0, 0.9);
+    }
+    .page-sub {
+      font-size: clamp(1rem, 1.8vw, 1.15rem);
+      color: var(--fg2);
+      max-width: 680px;
+      margin: 0 auto 10px;
+      line-height: 1.75;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+    }
+
+    /* ===== CONTACT MAIN SECTION ===== */
+    .sec { padding: 30px 0 90px; position: relative; z-index: 4; }
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 36px;
+      align-items: stretch;
+      margin-top: 10px;
+    }
+
+    /* Left Column: Office Info Card */
+    .info-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 38px 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 24px;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      transition: var(--trans);
+    }
+    .info-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 255, 16, 0.08);
+    }
+    .info-card-header h3 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .info-card-header p {
+      font-size: 0.92rem;
+      color: var(--fg2);
+      line-height: 1.65;
+    }
+
+    .info-items-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      flex: 1;
+      justify-content: center;
+    }
+    .contact-item-box {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      padding: 14px 18px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: var(--trans);
+    }
+    .contact-item-box:hover {
+      background: rgba(255, 255, 255, 0.06);
+      border-color: rgba(0, 255, 16, 0.35);
+      transform: translateX(3px);
+    }
+    .item-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      flex-shrink: 0;
+      background: rgba(0, 255, 16, 0.09);
+      border: 1px solid rgba(0, 255, 16, 0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00ff10;
+    }
+    .item-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+    .item-content { flex: 1; min-width: 0; }
+    .item-label {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--accent-green);
+      margin-bottom: 3px;
+    }
+    .item-value {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: #ffffff;
+      word-break: break-word;
+    }
+    .item-value a {
+      color: #ffffff;
+      transition: var(--trans);
+    }
+    .item-value a:hover {
+      color: var(--accent-green);
+    }
+
+    .direct-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .btn-wa-direct {
+      background: #00ff10;
+      color: #000000;
+      font-weight: 700;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.94rem;
+      letter-spacing: 0.02em;
+      transition: var(--trans);
+      box-shadow: 0 4px 18px rgba(0, 255, 16, 0.3);
+    }
+    .btn-wa-direct:hover {
+      background: #00e00e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 26px rgba(0, 255, 16, 0.45);
+    }
+    .btn-call-direct {
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.04);
+      color: #ffffff;
+      font-weight: 600;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 0.92rem;
+      transition: var(--trans);
+    }
+    .btn-call-direct:hover {
+      border-color: rgba(0, 255, 16, 0.4);
+      background: rgba(0, 255, 16, 0.06);
+      color: #00ff10;
+      transform: translateY(-2px);
+    }
+
+    /* Right Column: Inquiry Form Card */
+    .form-card {
+      background: var(--card-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 38px 34px;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+      transition: var(--trans);
+    }
+    .form-card:hover {
+      border-color: var(--border-hover);
+      box-shadow: 0 20px 48px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 255, 16, 0.08);
+    }
+    .form-card-header h3 {
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+    .form-card-header p {
+      font-size: 0.92rem;
+      color: var(--fg2);
+      margin-bottom: 26px;
+      line-height: 1.65;
+    }
+
+    .form-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      flex: 1;
+      justify-content: space-between;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .field-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .field-group label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.88);
+      letter-spacing: 0.02em;
+    }
+    .field-group label .req {
+      color: #00ff10;
+      margin-left: 2px;
+    }
+    .field-group input,
+    .field-group select,
+    .field-group textarea {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: var(--radius-sm);
+      padding: 13px 16px;
+      color: #ffffff;
+      font-size: 0.92rem;
+      font-family: inherit;
+      outline: none;
+      transition: var(--trans);
+      box-sizing: border-box;
+      width: 100%;
+    }
+    .field-group input::placeholder,
+    .field-group textarea::placeholder {
+      color: rgba(255, 255, 255, 0.35);
+    }
+    .field-group input:focus,
+    .field-group select:focus,
+    .field-group textarea:focus {
+      border-color: #00ff10;
+      background: rgba(0, 255, 16, 0.03);
+      box-shadow: 0 0 0 3px rgba(0, 255, 16, 0.15);
+    }
+    .field-group select option {
+      background: #111418;
+      color: #ffffff;
+      padding: 10px;
+    }
+    .field-group textarea {
+      resize: vertical;
+      min-height: 110px;
+      line-height: 1.55;
+    }
+
+    .btn-submit-main {
+      background: #00ff10;
+      color: #000000;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-size: 0.96rem;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: var(--trans);
+      margin-top: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 4px 20px rgba(0, 255, 16, 0.35);
+      border: none;
+    }
+    .btn-submit-main:hover {
+      background: #00e00e;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(0, 255, 16, 0.55);
+    }
+    .btn-submit-main:active {
+      transform: translateY(0);
+    }
+
+    /* ===== PROMISES ROW ===== */
+    .promises-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .promise-card {
+      background: rgba(13, 16, 21, 0.65);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 26px 24px;
+      transition: var(--trans);
+    }
+    .promise-card:hover {
+      border-color: rgba(0, 255, 16, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+    }
+    .p-ico-wrap {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(0, 255, 16, 0.08);
+      border: 1px solid rgba(0, 255, 16, 0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00ff10;
+      margin-bottom: 14px;
+    }
+    .p-ico-wrap svg {
+      width: 22px;
+      height: 22px;
+    }
+    .promise-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+    .promise-card p {
+      font-size: 0.88rem;
+      color: var(--fg2);
+      line-height: 1.65;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 60px 0 32px;
+      margin-top: 80px;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      color: var(--fg2);
+      font-size: 0.88rem;
+      margin: 16px 0 20px;
+      max-width: 320px;
+      line-height: 1.7;
+    }
+    .footer-brand .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 255, 16, 0.1);
+      color: #00ff10;
+      border: 1px solid rgba(0, 255, 16, 0.3);
+      padding: 8px 18px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      transition: var(--trans);
+    }
+    .footer-brand .whatsapp-btn:hover {
+      background: #00ff10;
+      color: #000000;
+    }
+    .footer-col h4 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+    .footer-col li { margin-bottom: 10px; }
+    .footer-col a {
+      color: var(--fg2);
+      font-size: 0.86rem;
+      transition: var(--trans);
+    }
+    .footer-col a:hover {
+      color: #00ff10;
+      padding-left: 3px;
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      padding-top: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--fg3);
+      font-size: 0.82rem;
+    }
+
+    /* ===== FLOATING WHATSAPP BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 58px;
+      height: 58px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.45);
+      z-index: 9990;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s;
+      animation: waPulse 2.5s infinite;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1) translateY(-2px);
+      box-shadow: 0 10px 32px rgba(37, 211, 102, 0.65);
+    }
+    .whatsapp-float svg { width: 30px; height: 30px; fill: #ffffff; }
+    .whatsapp-tooltip {
+      position: absolute;
+      right: 70px;
+      background: #16181d;
+      color: #ffffff;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      white-space: nowrap;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      transform: translateX(6px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+    .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; transform: translateX(0); }
+    @keyframes waPulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6), 0 6px 24px rgba(37, 211, 102, 0.4); }
+      70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 6px 24px rgba(37, 211, 102, 0.4); }
+    }
+
+    /* ===== RESPONSIVE MEDIA QUERIES ===== */
+    @media (max-width: 1024px) {
+      .contact-layout { grid-template-columns: 1fr; gap: 32px; }
+      .promises-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .page-hero { padding: 120px 0 45px; }
+      .field-row { grid-template-columns: 1fr; gap: 16px; }
+      .promises-grid { grid-template-columns: 1fr; gap: 16px; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+      .info-card, .form-card { padding: 28px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo" aria-label="HomeAds Home">Home<span class="logo-green">Ads</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">HOME</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="javascript:void(0)" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" onclick="toggleServicesDropdown(event, this)">SERVICES <svg
+              width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round" class="dropdown-chevron">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg></a>
+          <ul class="dropdown-menu">
+            <li><a href="web-designing.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                  </path>
+                </svg>Web Designing</a></li>
+            <li><a href="web-development.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="16 18 22 12 16 6"></polyline>
+                  <polyline points="8 6 2 12 8 18"></polyline>
+                </svg>Web Development</a></li>
+            <li><a href="lead-generation.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>Lead Generation</a></li>
+            <li><a href="crm-solution.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="18" cy="18" r="3"></circle>
+                  <circle cx="6" cy="6" r="3"></circle>
+                  <path d="M13 6h3a2 2 0 0 1 2 2v7"></path>
+                  <line x1="6" y1="9" x2="6" y2="21"></line>
+                </svg>CRM Solution</a></li>
+          </ul>
+        </li>
+        <li><a href="blog.html">BLOG</a></li>
+        <li><a href="contact.html" class="active">CONTACT US</a></li>
+        <li><a href="contact.html" class="nav-pill-btn">FREE QUOTE</a></li>
+      </ul>
+      <button class="hamburger" id="ham" aria-label="Toggle menu" aria-expanded="false" onclick="toggleMobileNav(event)" type="button">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <script>
+    var lastNavToggle = 0;
+    function toggleMobileNav(e) {
+      var now = Date.now();
+      if (now - lastNavToggle < 250) {
+        if (e && e.preventDefault) e.preventDefault();
+        return;
+      }
+      lastNavToggle = now;
+      if (e) {
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+      }
+      var ham = document.getElementById('ham');
+      var navLinks = document.getElementById('nav-links');
+      if (!ham || !navLinks) return;
+      var isOpen = navLinks.classList.toggle('open');
+      ham.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (isOpen) {
+        ham.classList.add('is-active');
+        document.body.style.overflow = 'hidden';
+      } else {
+        ham.classList.remove('is-active');
+        document.body.style.overflow = '';
+      }
+    }
+
+    var lastDropdownToggle = 0;
+    function toggleServicesDropdown(e, el) {
+      var now = Date.now();
+      if (now - lastDropdownToggle < 250) {
+        if (e && e.preventDefault) e.preventDefault();
+        return;
+      }
+      lastDropdownToggle = now;
+      if (e) {
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+      }
+      var target = el || (e ? (e.currentTarget || e.target) : null);
+      var item = target ? (target.closest ? target.closest('.has-dropdown') : target.parentElement) : document.querySelector('.nav-item.has-dropdown');
+      if (item) {
+        var isOpen = item.classList.toggle('mobile-open');
+        if (target && target.setAttribute) {
+          target.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+      }
+    }
+    window.toggleServicesDropdown = toggleServicesDropdown;
+  </script>
+
+  <!-- ===== HERO ===== -->
+  <header class="page-hero">
+    <div class="hero-glow"></div>
+    <div class="container-sm">
+      <div class="page-badge">Direct Access to Real Estate Digital Strategists</div>
+      <h1 class="page-title">
+        Let's scale your real estate<br />
+        <span class="grad-text">sales pipeline together</span>
+      </h1>
+      <p class="page-sub">
+        Connect directly with the HomeAds digital team in Dubai. Speak directly with the marketing strategists, portal developers, and lead funnel architects driving your property sales.
+      </p>
+    </div>
+  </header>
+
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="sec" id="inquiry">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left Column: Contact Cards -->
+        <div class="info-card">
+          <div class="info-card-header">
+            <h3>Dubai Office Information</h3>
+            <p>Reach out anytime for project quotes, campaign estimates, portal development consultations, or CRM demos.</p>
+          </div>
+
+          <div class="info-items-list">
+            <div class="contact-item-box">
+              <div class="item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="item-content">
+                <span class="item-label">Office Address</span>
+                <div class="item-value" style="font-size:0.91rem;font-weight:400;color:var(--fg2);line-height:1.55;">
+                  Office No 19 31st Floor API World Tower Near World Trade Center Metro Station Dubai, United Arab Emirates
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item-box">
+              <div class="item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                </svg>
+              </div>
+              <div class="item-content">
+                <span class="item-label">WhatsApp Direct</span>
+                <div class="item-value">
+                  <a href="https://wa.me/9711234567890" target="_blank" rel="noopener" style="color:var(--accent-green);font-weight:700;">
+                    1234567890
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item-box">
+              <div class="item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="item-content">
+                <span class="item-label">Official Email</span>
+                <div class="item-value">
+                  <a href="mailto:info@homeads.ae">info@homeads.ae</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item-box">
+              <div class="item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </div>
+              <div class="item-content">
+                <span class="item-label">Official Domain</span>
+                <div class="item-value">
+                  <a href="https://homeads.ae" target="_blank" rel="noopener">homeads.ae</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="contact-item-box">
+              <div class="item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+              </div>
+              <div class="item-content">
+                <span class="item-label">Working Hours &amp; Response</span>
+                <div class="item-value" style="font-size:0.88rem;color:var(--fg2);font-weight:500;">
+                  Mon &ndash; Sat: 9:00 AM &ndash; 7:00 PM (GST) &bull; Rapid 15m WhatsApp Reply
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="direct-actions">
+            <a href="https://wa.me/9711234567890?text=Hi%20HomeAds,%20I%20am%20interested%20in%20your%20real%20estate%20digital%20services." target="_blank" rel="noopener" class="btn-wa-direct">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+              </svg>
+              <span>Chat on WhatsApp: 1234567890</span>
+            </a>
+            <a href="tel:1234567890" class="btn-call-direct">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+              <span>Call Direct Line: 1234567890</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Form -->
+        <div class="form-card">
+          <div class="form-card-header">
+            <h3>Send a Project Inquiry</h3>
+            <p>Fill out the form below and our Dubai team will get back to you with a tailored consultation within 24 hours.</p>
+          </div>
+
+          <form id="contact-page-form" class="form-grid">
+            <div class="field-row">
+              <div class="field-group">
+                <label for="cp-name">Your Full Name <span class="req">*</span></label>
+                <input type="text" id="cp-name" name="name" placeholder="e.g. Nasser Dehghan" required />
+              </div>
+              <div class="field-group">
+                <label for="cp-phone">Phone / WhatsApp <span class="req">*</span></label>
+                <input type="tel" id="cp-phone" name="phone" placeholder="e.g. 1234567890" required />
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field-group">
+                <label for="cp-email">Email Address <span class="req">*</span></label>
+                <input type="email" id="cp-email" name="email" placeholder="e.g. you@company.com" required />
+              </div>
+              <div class="field-group">
+                <label for="cp-type">Service Required <span class="req">*</span></label>
+                <select id="cp-type" name="service" required>
+                  <option value="" disabled selected>Select a real estate service...</option>
+                  <option value="Web Designing">Web Designing (Modern Visual Architecture)</option>
+                  <option value="E-Commerce Solutions">E-Commerce Solutions (Online Storefronts)</option>
+                  <option value="Web Development">Web Development (Custom Property Portals &amp; Maps)</option>
+                  <option value="Lead Generation">Lead Generation (High-ROI Buyer Campaigns)</option>
+                  <option value="CRM Solution">CRM Solution (Automation &amp; WhatsApp Workflows)</option>
+                  <option value="Full Digital Growth Package">Full Digital Growth Package (All Services)</option>
+                  <option value="Other">Other Inquiry</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-group">
+              <label for="cp-message">Project Description &amp; Scope <span class="req">*</span></label>
+              <textarea id="cp-message" name="message" rows="5" placeholder="Share details about your agency, off-plan projects, target buyer markets, required features, or launch timelines..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn-submit-main" id="cp-submit">
+              <span>Submit Project Inquiry</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Promises Row -->
+      <div class="promises-grid">
+        <div class="promise-card">
+          <div class="p-ico-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+          </div>
+          <h4>Verified Buyer Quality</h4>
+          <p>Pre-qualified leads filtered by investment capacity and property interest before reaching your sales desk.</p>
+        </div>
+        <div class="promise-card">
+          <div class="p-ico-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+            </svg>
+          </div>
+          <h4>Rapid Deployment</h4>
+          <p>Custom landing pages in 3–5 days, multi-listing portals in 1–2 weeks, and instant lead funnels.</p>
+        </div>
+        <div class="promise-card">
+          <div class="p-ico-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+          </div>
+          <h4>100% Asset Ownership</h4>
+          <p>Zero vendor lock-in. Full ownership of your code, design assets, lead lists, and CRM configurations.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo" aria-label="HomeAds Home">Home<span class="logo-green">Ads</span></a>
+          <p>Homes Ads Real Estate Digital Solutions delivers specialized end-to-end digital marketing, web portals, lead generation, and CRM automations for the UAE property market.</p>
+          <a href="https://wa.me/9711234567890?text=Hi%20HomeAds,%20I%20am%20interested%20in%20your%20real%20estate%20digital%20services." target="_blank" rel="noopener" class="whatsapp-btn" aria-label="WhatsApp">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+        </div>
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="index.html#services">SERVICES</a></li>
+            <li><a href="blog.html">BLOG</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="web-designing.html">Web Designing</a></li>
+            <li><a href="web-development.html">Web Development</a></li>
+            <li><a href="lead-generation.html">Lead Generation</a></li>
+            <li><a href="crm-solution.html">CRM Solution</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Dubai Office</h4>
+          <ul>
+            <li style="font-size:0.82rem;color:#888888;line-height:1.6;">Office No 19 31st Floor API World Tower Near World Trade Center Metro Station Dubai, United Arab Emirates</li>
+            <li style="margin-top:12px;"><a href="mailto:info@homeads.ae" style="color:#00ff10;text-decoration:none;">info@homeads.ae</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 HomeAds. All rights reserved.</p>
+        <p>Homes Ads Real Estate Digital Solutions</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Google Sheet Lead Capture Integration -->
+  <script src="submit-to-sheet.js"></script>
+
+  <!-- Fixed WhatsApp Floating Button (1234567890) -->
+  <a href="https://wa.me/9711234567890?text=Hi%20HomeAds,%20I%20am%20interested%20in%20your%20real%20estate%20digital%20services." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Chat on WhatsApp at 1234567890" title="WhatsApp: 1234567890">
+    <svg viewBox="0 0 24 24">
+      <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+    </svg>
+    <span class="whatsapp-tooltip">Chat on WhatsApp: 1234567890</span>
+  </a>
+
+  <!-- Unified Navbar Controller -->
+  <script src="navbar.js" defer></script>
+</body>
+</html>
+"""
+
+paths = [
+    r'c:\Users\Photoseries\Music\scratch\nothing\Homeads.ae\contact.html',
+    r'c:\Users\Photoseries\Music\scratch\photoseries\homeads.ae\contact.html'
+]
+
+for p in paths:
+    if os.path.exists(os.path.dirname(p)):
+        with open(p, 'w', encoding='utf-8') as f:
+            f.write(html_code)
+        print('Updated:', p, 'Size:', len(html_code))
