@@ -2249,3 +2249,36 @@ body.preloader-active {
   box-shadow: 0 4px 12px rgba(0,255,16,0.2);
 }
 
+
+/* ===== SERVICE CARD LINKS ===== */
+.svc-link {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1.2rem;
+  z-index: 2;
+}
+.svc-card:hover .svc-link,
+.svc-link:hover {
+  background: rgba(0, 255, 16, 0.15);
+  border-color: #00ff10;
+  color: #00ff10;
+}
+.svc-link:hover {
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(0,255,16,0.2);
+}
+.svc-card {
+  padding-bottom: 72px !important;
+}
