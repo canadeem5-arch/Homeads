@@ -1,0 +1,677 @@
+<style>
+/* WEB DEV SPECIFIC STYLES */
+.hero-dev {
+  padding: 180px 0 100px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero-dev::before {
+  content: '';
+  position: absolute;
+  top: -50%; left: 50%;
+  transform: translateX(-50%);
+  width: 1000px; height: 1000px;
+  background: radial-gradient(circle, rgba(0,255,16,0.05) 0%, rgba(0,0,0,0) 70%);
+  z-index: -1;
+}
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1.1;
+  margin: 20px 0 30px;
+  letter-spacing: -0.03em;
+}
+.hero-sub {
+  font-size: 1.1rem;
+  color: var(--fg2);
+  max-width: 800px;
+  margin: 0 auto 40px;
+  line-height: 1.8;
+}
+.hero-btns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+.hero-trust {
+  font-size: 0.85rem;
+  color: var(--fg3);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+}
+
+.intro-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 20px;
+  padding: 60px;
+}
+.intro-left h3 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: #fff;
+  font-weight: 700;
+}
+.check-list {
+  list-style: none;
+  padding: 0;
+}
+.check-list li {
+  position: relative;
+  padding-left: 36px;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  color: var(--fg2);
+}
+.check-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0; top: 0;
+  color: #00ff10;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+.srv-card {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 40px;
+  transition: var(--trans);
+  position: relative;
+  overflow: hidden;
+}
+.srv-card:hover {
+  border-color: rgba(0,255,16,0.3);
+  transform: translateY(-5px);
+}
+.srv-num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: rgba(0,255,16,0.5);
+  margin-bottom: 20px;
+  font-family: monospace;
+}
+.srv-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.srv-card p {
+  color: var(--fg2);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+.srv-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 20px;
+}
+.srv-list li {
+  font-size: 0.85rem;
+  color: var(--fg3);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.srv-list li::before {
+  content: '';
+  width: 6px; height: 6px;
+  background: #00ff10;
+  border-radius: 50%;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.feat-item {
+  padding: 30px;
+  background: rgba(0,0,0,0.3);
+  border-left: 2px solid rgba(0,255,16,0.5);
+  border-radius: 0 12px 12px 0;
+}
+.feat-item h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.feat-item p {
+  color: var(--fg2);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+.feat-num {
+  font-size: 0.8rem;
+  color: #00ff10;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.tech-ecosystem {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+.tech-col {
+  background: rgba(255,255,255,0.02);
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+}
+.tech-col h4 {
+  color: #00ff10;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  padding-bottom: 15px;
+}
+.tech-col ul {
+  list-style: none;
+  padding: 0;
+}
+.tech-col li {
+  color: var(--fg2);
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  position: relative;
+}
+.time-step {
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.05);
+  border-radius: 16px;
+  padding: 30px;
+}
+.time-step .num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  background: rgba(0,255,16,0.1);
+  color: #00ff10;
+  border-radius: 50%;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.time-step h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+.time-step p {
+  color: var(--fg2);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.perf-section {
+  background: #050505;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+.perf-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+.perf-card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+}
+.perf-card p {
+  color: var(--fg3);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.build-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+.build-item {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: var(--fg2);
+  font-size: 0.9rem;
+  transition: var(--trans);
+}
+.build-item:hover {
+  background: rgba(0,255,16,0.1);
+  color: #fff;
+  border-color: #00ff10;
+}
+
+@media (max-width: 768px) {
+  .intro-split { grid-template-columns: 1fr; padding: 30px; }
+  .hero-dev { padding: 140px 0 60px; }
+  .hero-btns { flex-direction: column; }
+}
+</style>
+
+<main>
+  <!-- SECTION 01: HERO -->
+  <section class="hero-dev">
+    <div class="container">
+      <div class="hero-content">
+        <span class="sec-tag">WEB DEVELOPMENT</span>
+        <h1 class="hero-title">High-Performance Web Development for <span class="grad-text">Real Estate Businesses</span></h1>
+        <p class="hero-sub">HomeAds builds fast, scalable and conversion-focused websites for real estate developers, agencies, brokerages and property brands. From powerful frontends to secure backend systems, we develop web experiences designed to showcase properties, capture leads and support real estate growth.</p>
+        <div class="hero-btns">
+          <a href="contact.html" class="btn-main">Start Your Project</a>
+          <a href="#services" class="btn-wa">Explore Our Services</a>
+        </div>
+        <p class="hero-trust">Custom Development &bull; Scalable Architecture &bull; Real Estate Focused</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 02: INTRODUCTION -->
+  <section class="sec sec-darker" id="intro">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="sec-tag">WEB DEVELOPMENT THAT SUPPORTS REAL ESTATE GROWTH</span>
+        <h2 class="sec-title">More Than a Website. A Digital Platform <span class="grad-text">Built Around Your Business.</span></h2>
+        <p class="sec-sub">Your website should do more than display properties. It should communicate your brand, present projects clearly, make property discovery simple, generate qualified enquiries and connect your digital operations with the tools your team already uses.<br><br>HomeAds develops custom web solutions around your business requirements, combining intuitive frontend experiences with reliable backend architecture, structured databases, integrations and performance-focused development.</p>
+      </div>
+      
+      <div class="intro-split">
+        <div class="intro-left">
+          <h3>Design the Experience.<br>Engineer the Performance.</h3>
+        </div>
+        <div class="intro-right">
+          <ul class="check-list">
+            <li>Built around your business goals</li>
+            <li>Developed for performance and scalability</li>
+            <li>Designed for real estate conversion journeys</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 03: SERVICES -->
+  <section class="sec" id="services">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="sec-tag">OUR WEB DEVELOPMENT SERVICES</span>
+        <h2 class="sec-title">Complete Web Development <span class="grad-text">Solutions for Real Estate</span></h2>
+        <p class="sec-sub">From a high-end corporate website to a complex property platform, HomeAds provides the development capabilities required to build reliable and scalable web experiences.</p>
+      </div>
+      
+      <div class="services-grid">
+        <div class="srv-card">
+           <div class="srv-num">01</div>
+           <h3>Frontend Development</h3>
+           <p>Build engaging, responsive and intuitive interfaces that make your real estate brand and property portfolio easy to explore. We develop clean frontend experiences focused on usability, performance and conversion.</p>
+           <ul class="srv-list">
+             <li>Responsive interfaces</li>
+             <li>Interactive property experiences</li>
+             <li>Modern UI implementation</li>
+             <li>Performance optimization</li>
+             <li>Cross-browser compatibility</li>
+           </ul>
+        </div>
+        <div class="srv-card">
+           <div class="srv-num">02</div>
+           <h3>Backend Development</h3>
+           <p>Develop secure and scalable backend systems that power your website, manage business logic and support complex real estate workflows.</p>
+           <ul class="srv-list">
+             <li>Custom backend systems</li>
+             <li>Business logic</li>
+             <li>User management</li>
+             <li>Admin functionality</li>
+             <li>Secure server-side architecture</li>
+           </ul>
+        </div>
+        <div class="srv-card">
+           <div class="srv-num">03</div>
+           <h3>Database Management</h3>
+           <p>Organize and manage property, project, customer and website data through structured database architecture designed for reliability and scalability.</p>
+           <ul class="srv-list">
+             <li>Property databases</li>
+             <li>Customer data</li>
+             <li>Structured content</li>
+             <li>Data relationships</li>
+             <li>Database optimization</li>
+           </ul>
+        </div>
+        <div class="srv-card">
+           <div class="srv-num">04</div>
+           <h3>Full-Stack Development</h3>
+           <p>Develop complete web platforms from frontend interface to backend infrastructure, creating a unified development environment for complex real estate requirements.</p>
+           <ul class="srv-list">
+             <li>Frontend + backend</li>
+             <li>API development</li>
+             <li>Database integration</li>
+             <li>Authentication</li>
+             <li>Scalable architecture</li>
+           </ul>
+        </div>
+        <div class="srv-card">
+           <div class="srv-num">05</div>
+           <h3>CMS Development</h3>
+           <p>Give your team control over website content with flexible content management systems that make it easy to update properties, projects, pages, blogs and other digital assets.</p>
+           <ul class="srv-list">
+             <li>Custom CMS</li>
+             <li>Property management</li>
+             <li>Content management</li>
+             <li>Admin dashboards</li>
+             <li>Easy content updates</li>
+           </ul>
+        </div>
+        <div class="srv-card">
+           <div class="srv-num">06</div>
+           <h3>Real Estate Website Development</h3>
+           <p>Create purpose-built websites for developers, agencies and brokerages with functionality designed around the property discovery and enquiry journey.</p>
+           <ul class="srv-list">
+             <li>Property listings</li>
+             <li>Property search</li>
+             <li>Advanced filters</li>
+             <li>Property detail pages</li>
+             <li>Project showcases</li>
+           </ul>
+        </div>
+        <div class="srv-card">
+           <div class="srv-num">07</div>
+           <h3>API &amp; Third-Party Integration</h3>
+           <p>Connect your website with the systems your real estate business depends on, creating smoother data flows and more efficient operations.</p>
+           <ul class="srv-list">
+             <li>CRM integrations</li>
+             <li>Lead management</li>
+             <li>WhatsApp integrations</li>
+             <li>Maps integrations</li>
+             <li>Third-party APIs</li>
+           </ul>
+        </div>
+        <div class="srv-card">
+           <div class="srv-num">08</div>
+           <h3>Performance &amp; Maintenance</h3>
+           <p>Keep your website fast, secure and reliable with technical optimization, monitoring and ongoing development support.</p>
+           <ul class="srv-list">
+             <li>Speed optimization</li>
+             <li>Security improvements</li>
+             <li>Technical maintenance</li>
+             <li>Bug fixing</li>
+             <li>Performance monitoring</li>
+           </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 04: BUILT FOR REAL ESTATE -->
+  <section class="sec sec-darker" id="re-features">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="sec-tag">BUILT FOR REAL ESTATE</span>
+        <h2 class="sec-title">Web Development Designed Around <span class="grad-text">the Property Journey</span></h2>
+        <p class="sec-sub">Real estate websites require more than attractive pages. They need structured property data, intuitive search experiences, project presentations, enquiry systems and integrations that support the way buyers, investors and sales teams interact with property.</p>
+      </div>
+      <div class="grid-3">
+        <div class="feat-item">
+          <div class="feat-num">01</div>
+          <h4>Property Discovery</h4>
+          <p>Help visitors find the right property through structured listings, categories, locations and intelligent filtering.</p>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num">02</div>
+          <h4>Property &amp; Project Pages</h4>
+          <p>Present developments and individual properties with rich information, galleries, specifications, amenities and enquiry options.</p>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num">03</div>
+          <h4>Advanced Search &amp; Filtering</h4>
+          <p>Make it easier for users to narrow properties by location, price, property type, bedrooms, amenities and other relevant criteria.</p>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num">04</div>
+          <h4>Lead Generation</h4>
+          <p>Build strategic enquiry points throughout the website to convert property interest into actionable leads.</p>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num">05</div>
+          <h4>CRM &amp; Lead Integration</h4>
+          <p>Connect website enquiries with CRM and lead-management systems to help sales teams respond faster.</p>
+        </div>
+        <div class="feat-item">
+          <div class="feat-num">06</div>
+          <h4>Scalable Property Architecture</h4>
+          <p>Create a technical foundation that can support growing property inventories, new developments and future functionality.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 05: TECHNOLOGY -->
+  <section class="sec" id="tech-stack">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="sec-tag">MODERN DEVELOPMENT STACK</span>
+        <h2 class="sec-title">Technology That Supports <span class="grad-text">Performance and Scale</span></h2>
+        <p class="sec-sub">We select development technologies and architecture based on your project's requirements, complexity, performance goals and long-term growth.</p>
+      </div>
+      <div class="tech-ecosystem">
+        <div class="tech-col">
+          <h4>Frontend</h4>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>Modern JS Frameworks</li>
+          </ul>
+        </div>
+        <div class="tech-col">
+          <h4>Backend</h4>
+          <ul>
+            <li>PHP</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>Custom Server-Side</li>
+          </ul>
+        </div>
+        <div class="tech-col">
+          <h4>Databases</h4>
+          <ul>
+            <li>MySQL</li>
+            <li>PostgreSQL</li>
+            <li>MongoDB</li>
+          </ul>
+        </div>
+        <div class="tech-col">
+          <h4>Integrations</h4>
+          <ul>
+            <li>REST APIs</li>
+            <li>CRM Integrations</li>
+            <li>Maps &amp; Payments</li>
+            <li>Communication APIs</li>
+          </ul>
+        </div>
+        <div class="tech-col">
+          <h4>CMS</h4>
+          <ul>
+            <li>WordPress</li>
+            <li>Custom CMS</li>
+            <li>Headless CMS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 06: PROCESS -->
+  <section class="sec sec-darker" id="process">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="sec-tag">OUR DEVELOPMENT PROCESS</span>
+        <h2 class="sec-title">From Business Requirement to <span class="grad-text">Reliable Web Platform</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="time-step">
+          <div class="num">1</div>
+          <h4>Discovery</h4>
+          <p>Understand your business, audience, property portfolio, objectives and technical requirements.</p>
+        </div>
+        <div class="time-step">
+          <div class="num">2</div>
+          <h4>Planning</h4>
+          <p>Define the website architecture, functionality, integrations, database structure and development roadmap.</p>
+        </div>
+        <div class="time-step">
+          <div class="num">3</div>
+          <h4>Frontend Development</h4>
+          <p>Transform the approved experience into responsive, accessible and high-performance interfaces.</p>
+        </div>
+        <div class="time-step">
+          <div class="num">4</div>
+          <h4>Backend Development</h4>
+          <p>Build the backend logic, database architecture, APIs, admin functionality and required integrations.</p>
+        </div>
+        <div class="time-step">
+          <div class="num">5</div>
+          <h4>Testing &amp; Optimization</h4>
+          <p>Test functionality, responsiveness, performance, security and user journeys across relevant environments.</p>
+        </div>
+        <div class="time-step">
+          <div class="num">6</div>
+          <h4>Launch &amp; Support</h4>
+          <p>Deploy the website and provide ongoing technical support, improvements and future development when required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 07: WHY US -->
+  <section class="sec" id="why-us">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="sec-tag">WHY HOMEADS</span>
+        <h2 class="sec-title">Development With Business and <span class="grad-text">Real Estate in Mind</span></h2>
+      </div>
+      <div class="grid-3">
+        <div class="srv-card" style="padding: 30px;">
+          <h3 style="font-size:1.2rem; color:#00ff10;">Real Estate Focus</h3>
+          <p>Development decisions are made with real estate websites, property journeys and lead generation in mind.</p>
+        </div>
+        <div class="srv-card" style="padding: 30px;">
+          <h3 style="font-size:1.2rem; color:#00ff10;">Custom Solutions</h3>
+          <p>We build around your requirements instead of forcing your business into a rigid template.</p>
+        </div>
+        <div class="srv-card" style="padding: 30px;">
+          <h3 style="font-size:1.2rem; color:#00ff10;">Performance First</h3>
+          <p>Clean development and technical optimization help create faster, smoother web experiences.</p>
+        </div>
+        <div class="srv-card" style="padding: 30px;">
+          <h3 style="font-size:1.2rem; color:#00ff10;">Scalable Architecture</h3>
+          <p>Build a foundation that can evolve as your property portfolio and business requirements grow.</p>
+        </div>
+        <div class="srv-card" style="padding: 30px;">
+          <h3 style="font-size:1.2rem; color:#00ff10;">Integration Ready</h3>
+          <p>Connect your website with CRM systems, APIs and other business tools where required.</p>
+        </div>
+        <div class="srv-card" style="padding: 30px;">
+          <h3 style="font-size:1.2rem; color:#00ff10;">Long-Term Support</h3>
+          <p>Continue improving, maintaining and expanding your web platform after launch.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 08: WHAT WE CAN BUILD -->
+  <section class="sec sec-darker" id="solutions">
+    <div class="container">
+      <div class="text-center" style="margin-bottom: 60px;">
+        <span class="sec-tag">WEB SOLUTIONS</span>
+        <h2 class="sec-title">From Brand Websites to Advanced <span class="grad-text">Real Estate Platforms</span></h2>
+      </div>
+      <div class="build-list">
+        <span class="build-item">Real Estate Corporate Websites</span>
+        <span class="build-item">Property Developer Websites</span>
+        <span class="build-item">Real Estate Agency Websites</span>
+        <span class="build-item">Brokerage Websites</span>
+        <span class="build-item">Property Listing Platforms</span>
+        <span class="build-item">Property Search Websites</span>
+        <span class="build-item">Project Launch Websites</span>
+        <span class="build-item">Luxury Real Estate Websites</span>
+        <span class="build-item">Property Lead Generation Websites</span>
+        <span class="build-item">Real Estate CMS Platforms</span>
+        <span class="build-item">Custom Business Websites</span>
+        <span class="build-item">API-Connected Web Platforms</span>
+        <span class="build-item">Real Estate CRM-Connected Websites</span>
+        <span class="build-item">Custom Admin Dashboards</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 09: PERFORMANCE -->
+  <section class="sec perf-section" id="performance">
+    <div class="container">
+      <div class="text-center">
+        <span class="sec-tag">ENGINEERED FOR PERFORMANCE</span>
+        <h2 class="sec-title">Fast. Secure. Scalable. <span class="grad-text">Built to Perform.</span></h2>
+        <p class="sec-sub">A beautiful website is only valuable when it performs. HomeAds combines thoughtful frontend development, efficient backend architecture, structured data and technical optimization to create websites that are built for real-world use.</p>
+      </div>
+      <div class="perf-grid">
+        <div class="perf-card">
+          <h3>Performance</h3>
+          <p>Optimized experiences designed for speed and smooth interaction.</p>
+        </div>
+        <div class="perf-card">
+          <h3>Security</h3>
+          <p>Security-conscious development practices and controlled access to critical systems.</p>
+        </div>
+        <div class="perf-card">
+          <h3>Scalability</h3>
+          <p>Architecture designed to accommodate new content, properties, users and functionality.</p>
+        </div>
+        <div class="perf-card">
+          <h3>Maintainability</h3>
+          <p>Clean, structured development that makes future updates and enhancements easier.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 10: CTA -->
+  <section class="sec" id="cta-final">
+    <div class="container text-center">
+      <span class="sec-tag">LET'S BUILD YOUR NEXT WEB PLATFORM</span>
+      <h2 class="sec-title">Ready to Build a Better <span class="grad-text">Real Estate Website?</span></h2>
+      <p class="sec-sub" style="margin-bottom:40px;">Tell us what you want to build. Whether you need a high-end real estate website, property platform, custom CMS, CRM-connected website or a completely custom web solution, HomeAds can help turn your requirements into a powerful digital experience.</p>
+      <div class="hero-btns">
+        <a href="contact.html" class="btn-main">Start Your Web Development Project</a>
+        <a href="contact.html" class="btn-wa">Talk to HomeAds</a>
+      </div>
+      <p class="hero-trust">Web Development &bull; Real Estate Technology &bull; Custom Solutions</p>
+    </div>
+  </section>
+</main>

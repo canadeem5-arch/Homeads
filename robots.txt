@@ -1,0 +1,6 @@
+# robots.txt for HomeAds (homeads.ae)
+User-agent: *
+Allow: /
+
+# Sitemap Index
+Sitemap: https://homeads.ae/sitemap.xml
